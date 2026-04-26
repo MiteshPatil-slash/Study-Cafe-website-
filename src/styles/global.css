@@ -1,0 +1,187 @@
+/* ─── RESET & BASE ──────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Sora', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+input,
+select,
+button,
+textarea {
+  font-family: inherit;
+}
+
+/* ─── SCROLLBAR ─────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.35);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.6);
+}
+
+/* ─── ANIMATIONS ────────────────────────────────────────────────────────────── */
+@keyframes slideInRight {
+  from {
+    transform: translateX(120px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ─── UTILITY CLASSES ───────────────────────────────────────────────────────── */
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.scale-in {
+  animation: scaleIn 0.3s ease forwards;
+}
+
+/* Stagger children */
+.stagger > *:nth-child(1) { animation-delay: 0.05s; opacity: 0; animation-fill-mode: forwards; animation-name: fadeInUp; animation-duration: 0.4s; }
+.stagger > *:nth-child(2) { animation-delay: 0.1s;  opacity: 0; animation-fill-mode: forwards; animation-name: fadeInUp; animation-duration: 0.4s; }
+.stagger > *:nth-child(3) { animation-delay: 0.15s; opacity: 0; animation-fill-mode: forwards; animation-name: fadeInUp; animation-duration: 0.4s; }
+.stagger > *:nth-child(4) { animation-delay: 0.2s;  opacity: 0; animation-fill-mode: forwards; animation-name: fadeInUp; animation-duration: 0.4s; }
+.stagger > *:nth-child(5) { animation-delay: 0.25s; opacity: 0; animation-fill-mode: forwards; animation-name: fadeInUp; animation-duration: 0.4s; }
+.stagger > *:nth-child(6) { animation-delay: 0.3s;  opacity: 0; animation-fill-mode: forwards; animation-name: fadeInUp; animation-duration: 0.4s; }
+
+/* ─── CARD HOVER ────────────────────────────────────────────────────────────── */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+}
+
+/* ─── GRADIENT TEXT ─────────────────────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #6366f1, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── GLASS EFFECT ──────────────────────────────────────────────────────────── */
+.glass {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ─── NO SCROLLBAR ──────────────────────────────────────────────────────────── */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── TABLE ─────────────────────────────────────────────────────────────────── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* ─── SELECT OPTION ─────────────────────────────────────────────────────────── */
+select option {
+  background: #0c1020;
+  color: #f1f5f9;
+}
+
+/* ─── FOCUS RING ────────────────────────────────────────────────────────────── */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+/* ─── RESPONSIVE ────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
