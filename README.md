@@ -1,5 +1,6 @@
 # ☕ Study Cafe
 
+
 > Your academic edge, brewed to perfection.
 
 A full-featured academic resource platform for engineering students in Pune, built with **React.js**, **Context API**, and beautiful modern UI.
